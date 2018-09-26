@@ -1024,7 +1024,9 @@ if (!Array.from) {
 // Called after 'deviceready' event
 channel.deviceready.subscribe(function () {
     if (!window.skipLocalNotificationReady) {
-        exports.fireQueuedEvents();
+        setTimeout(function(){
+            exports.fireQueuedEvents();
+        }, 5000);
     }
 });
 
